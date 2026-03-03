@@ -1,0 +1,77 @@
+{
+  "sections": [
+    {
+      "id": "codex",
+      "label": { "es": "Codex", "en": "Codex", "fr": "Codex" },
+      "books": [
+        {
+          "id": "1",
+          "title": { "es": "De novo codice componendo", "en": "De novo codice componendo", "fr": "De novo codice componendo" },
+          "articles": [
+            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
+            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
+          ]
+        },
+        {
+          "id": "2",
+          "title": { "es": "De iustiniano codice confirmando", "en": "De iustiniano codice confirmando", "fr": "De iustiniano codice confirmando" },
+          "articles": [
+            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
+            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
+          ]
+        },
+        {
+          "id": "3",
+          "title": { "es": "De emendatione codicis iustiniani et secunda eius editione", "en": "De emendatione codicis iustiniani et secunda eius editione", "fr": "De emendatione codicis iustiniani et secunda eius editione" },
+          "articles": [
+            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
+            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "digesto",
+      "label": { "es": "Digesto", "en": "Digesto", "fr": "Digesto" },
+      "books": [
+        {
+          "id": "2",
+          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" },
+          "articles": [
+            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
+            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "instituciones",
+      "label": { "es": "Instituciones", "en": "Institutions", "fr": "établissements" },
+      "books": [
+        {
+          "id": "3",
+          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" },
+          "articles": [
+            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
+            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "novelas",
+      "label": { "es": "Novelas", "en": "Novels", "fr": "Romans" },
+      "books": [
+        {
+          "id": "4",
+          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" },
+          "articles": [
+            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
+            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
+          ]
+        }
+      ]
+    }
+    
+  ]
+}
