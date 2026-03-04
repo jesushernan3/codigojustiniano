@@ -1,37 +1,47 @@
-import { Link } from "react-router";
-import toc from "../../content/toc.json";
+import { NavLink } from "react-router";
+
+function NavItem({ to, children }) {
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        [
+          "text-sm transition-colors",
+          isActive
+            ? "text-zinc-900 font-medium"
+            : "text-zinc-600 hover:text-zinc-900",
+        ].join(" ")
+      }
+    >
+      {children}
+    </NavLink>
+  );
+}
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-30  bg-zinc-950/85 backdrop-blur flex flex-col border-b border-zinc-200">
-      <div className="mx-auto max-w-7xl p-14 mb-10 md:px-6 h-14 flex items-center  flex-col">
-        {/* Logo / Título */}
-        <Link
-          to="/"
-          className="font-semibold tracking-tight text-zinc-100 text-5xl"
-        >
-          Corpus Iuris Civilis
-        </Link>
-        <p
-          className="text-teal-100
-"
-        >
-          cuerpo de derecho civil
-        </p>
-      </div>
+    <>
+      {/* Bloque superior (normal) */}
+      <header className="bg-white border-b border-zinc-200">
+        <div className="mx-auto max-w-7xl px-4 md:px-6 py-8">
+          <h1 className="text-4xl font-semibold tracking-tight text-zinc-900">
+            Corpus Iuris Civilis
+          </h1>
+          <p className="mt-1 text-sm text-zinc-500">Cuerpo de derecho civil</p>
+        </div>
+      </header>
 
-      {/* Navegación */}
-      <nav className="bg-white hidden md:flex justify-center items-center gap-6 text-sm">
-        {toc.sections.map((section) => (
-          <Link
-            key={section.id}
-            to={`/${section.id}`}
-            className="text-gray-950 hover:text-zinc-100 transition-colors"
-          >
-            {section.id}
-          </Link>
-        ))}
-      </nav>
-    </header>
+      {/* Nav sticky separado */}
+      <div className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/75">
+        <div className="mx-auto max-w-7xl px-4 md:px-6">
+          <nav className="flex h-12 items-center gap-8">
+            <NavItem to="/codex">Codex</NavItem>
+            <NavItem to="/digesto">Digesto</NavItem>
+            <NavItem to="/instituciones">Instituciones</NavItem>
+            <NavItem to="/novelas">Novelas</NavItem>
+          </nav>
+        </div>
+      </div>
+    </>
   );
 }
