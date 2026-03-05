@@ -6,70 +6,139 @@
       "books": [
         {
           "id": "1",
-          "title": { "es": "De novo codice componendo", "en": "De novo codice componendo", "fr": "De novo codice componendo" },
-          "articles": [
-            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
-            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
-          ]
+          "title": { "es": "De novo codice componendo", "en": "De novo codice componendo", "fr": "De novo codice componendo" }
+          
         },
         {
           "id": "2",
-          "title": { "es": "De iustiniano codice confirmando", "en": "De iustiniano codice confirmando", "fr": "De iustiniano codice confirmando" },
-          "articles": [
-            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
-            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
-          ]
+          "title": { "es": "De iustiniano codice confirmando", "en": "De iustiniano codice confirmando", "fr": "De iustiniano codice confirmando" }
         },
         {
           "id": "3",
-          "title": { "es": "De emendatione codicis iustiniani et secunda eius editione", "en": "De emendatione codicis iustiniani et secunda eius editione", "fr": "De emendatione codicis iustiniani et secunda eius editione" },
-          "articles": [
-            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
-            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
-          ]
+          "title": { "es": "De emendatione codicis iustiniani et secunda eius editione", "en": "De emendatione codicis iustiniani et secunda eius editione", "fr": "De emendatione codicis iustiniani et secunda eius editione" }
+        },
+        {
+          "id": "4",
+          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" }
+        },
+        {
+          "id": "5",
+          "title": { "es": "Libro II", "en": "Book II", "fr": "Livre II" }
+        },
+        {
+          "id": "6",
+          "title": { "es": "Libro III", "en": "Book III", "fr": "Livre III" }
+        },
+        {
+          "id": "7",
+          "title": { "es": "Libro IV", "en": "Book IV", "fr": "Livre IV" }
+        },
+        {
+          "id": "8",
+          "title": { "es": "Libro V", "en": "Book V", "fr": "Livre V" }
+        },
+        {
+          "id": "9",
+          "title": { "es": "Libro VI", "en": "Book VI", "fr": "Livre VI" }
+        },
+        {
+          "id": "10",
+          "title": { "es": "Libro VII", "en": "Book VII", "fr": "Livre VII" }
+        },
+        {
+          "id": "11",
+          "title": { "es": "Libro VIII", "en": "Book VIII", "fr": "Livre VIII" }
+        },
+        {
+          "id": "11",
+          "title": { "es": "Libro IX", "en": "Book IX", "fr": "Livre IX" }
         }
       ]
     },
+
     {
       "id": "digesto",
       "label": { "es": "Digesto", "en": "Digesto", "fr": "Digesto" },
       "books": [
         {
+          "id": "1",
+          "title": { "es": "Libro Constituio deo auctore", "en": "Book Constituio deo auctore", "fr": "Constituio deo auctorevre I" }
+        },
+        {
           "id": "2",
-          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" },
-          "articles": [
-            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
-            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
-          ]
+          "title": { "es": "Libro Constitutio Omnem", "en": "Book Constitutio Omnem", "fr": "Livre Constitutio Omnem" }
+        },
+        {
+          "id": "3",
+          "title": { "es": "Libro Consititutio Tanta", "en": "Book Consititutio Tanta", "fr": "Livre Consititutio Tanta" }
+        },
+        {
+          "id": "4",
+          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" }
+        },
+        {
+          "id": "5",
+          "title": { "es": "Libro II", "en": "Book II", "fr": "Livre II" }
+        },
+        {
+          "id": "6",
+          "title": { "es": "Libro III", "en": "Book III", "fr": "Livre III" }
+        },
+        {
+          "id": "7",
+          "title": { "es": "Libro IV", "en": "Book IV", "fr": "Livre IV" }
+        },
+        {
+          "id": "8",
+          "title": { "es": "Libro V", "en": "Book V", "fr": "Livre V" }
+        },
+        {
+          "id": "9",
+          "title": { "es": "Libro VI", "en": "Book VI", "fr": "Livre VI" }
+        },
+        {
+          "id": "10",
+          "title": { "es": "Libro VII", "en": "Book VII", "fr": "Livre VII" }
+        },
+        {
+          "id": "11",
+          "title": { "es": "Libro VIII", "en": "Book VIII", "fr": "Livre VIII" }
+        },
+        {
+          "id": "11",
+          "title": { "es": "Libro IX", "en": "Book IX", "fr": "Livre IX" }
         }
       ]
     },
+
     {
       "id": "instituciones",
       "label": { "es": "Instituciones", "en": "Institutions", "fr": "établissements" },
       "books": [
         {
-          "id": "3",
-          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" },
-          "articles": [
-            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
-            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
-          ]
+          "id": "1",
+          "title": { "es": "Libro Prooemium de confirmatione Institutionum", "en": "Book Prooemium de confirmatione Institutionum", "fr": "Livre Prooemium de confirmatione Institutionum" }
         }
       ]
     },
+    
     {
       "id": "novelas",
       "label": { "es": "Novelas", "en": "Novels", "fr": "Romans" },
       "books": [
         {
-          "id": "4",
-          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" },
-          "articles": [
-            { "id": "1", "title": { "es": "Título 1", "en": "Title 1", "fr": "Titre 1" } },
-            { "id": "2", "title": { "es": "Título 2", "en": "Title 2", "fr": "Titre 2" } }
-          ]
+          "id": "1",
+          "title": { "es": "Libro I", "en": "Book I", "fr": "Livre I" }
+        },
+        {
+          "id": "2",
+          "title": { "es": "Libro II", "en": "Book II", "fr": "Livre II" }
+        },
+        {
+          "id": "3",
+          "title": { "es": "Libro III", "en": "Book III", "fr": "Livre III" }
         }
+
       ]
     }
     

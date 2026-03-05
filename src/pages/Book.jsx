@@ -1,100 +1,88 @@
-import { useParams, useOutletContext, Link } from "react-router";
-
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useParams } from "react-router";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import remarkSlug from "remark-slug";
 
-import { BOOKS_DB } from "../content/bookDb";
-import { tocStringFromBody, parseTocString } from "../lib/bookToc";
-
-function slugify(s) {
-  return s
-    .toLowerCase()
-    .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-");
+import { loadBookMarkdown } from "../lib/contentLoader.js";
+import { stripFrontmatter, splitFirstH1 } from "../lib/mdUtils.js";
+import BackToTopButton from "../app/components/BackToTopButton.jsx";
+// fallback: "01.de_novo_codice_componendo.md" -> "De novo codice componendo"
+function titleFromPath(filePath) {
+  if (!filePath) return "";
+  const base = filePath.split("/").pop() || "";
+  const noExt = base.replace(/\.md$/i, "");
+  const noPrefix = noExt.replace(/^\d+[._-]*/, "");
+  const spaced = noPrefix.replace(/[_\-]+/g, " ").trim();
+  return spaced ? spaced[0].toUpperCase() + spaced.slice(1) : "";
 }
 
 export default function Book() {
   const { categorySlug, bookId } = useParams();
 
-  const key = `${categorySlug}/${bookId}`;
-  const record = BOOKS_DB[key];
+  const [rawMd, setRawMd] = useState("");
+  const [filePath, setFilePath] = useState("");
+  const [err, setErr] = useState(null);
 
-  if (!record) throw new Response("Book not found", { status: 404 });
+  useEffect(() => {
+    let alive = true;
 
-  // 4 partes, todas strings
-  const title = String(record.title);
-  const date = String(record.date);
-  const body = String(record.body);
+    setErr(null);
+    setRawMd("");
+    setFilePath("");
 
-  // Links string (JSON string)
-  const links = useMemo(() => tocStringFromBody(body), [body]);
+    loadBookMarkdown(categorySlug, bookId)
+      .then(({ raw, path }) => {
+        if (!alive) return;
+        setFilePath(path || "");
+        setRawMd(stripFrontmatter(raw));
+      })
+      .catch((e) => alive && setErr(e));
 
-  // Para renderizar el menú, lo parseamos (esto ya no es “DB”; es UI)
-  const tocItems = useMemo(() => parseTocString(links), [links]);
+    return () => {
+      alive = false;
+    };
+  }, [categorySlug, bookId]);
+
+  const { title: mdTitle, body } = useMemo(() => splitFirstH1(rawMd), [rawMd]);
+  const finalTitle = mdTitle || titleFromPath(filePath) || `Libro ${bookId}`;
+
+  if (err) {
+    throw err instanceof Response
+      ? err
+      : new Response("Not found", { status: 404 });
+  }
+
+  if (!rawMd) {
+    return <div className="text-sm text-zinc-500">Cargando…</div>;
+  }
 
   return (
-    <section className="bg-white text-zinc-800">
-      <div className="mx-auto max-w-7xl px-6 py-10">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
-          {/* CONTENIDO PRINCIPAL */}
-          <main className="min-w-0 rounded-2xl border border-zinc-200 bg-white p-8">
-            <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
-              {title}
-            </h1>
-
-            <div className="mt-2 text-sm text-zinc-500">Fecha: {date}</div>
-
-            <div className="mt-8 prose max-w-none prose-headings:text-zinc-900 prose-p:text-zinc-700 prose-li:text-zinc-700">
-              <ReactMarkdown
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  h3: ({ children }) => {
-                    const text = String(children);
-                    const id = slugify(text);
-                    return <h3 id={id}>{children}</h3>;
-                  },
-                  h4: ({ children }) => {
-                    const text = String(children);
-                    const id = slugify(text);
-                    return <h4 id={id}>{children}</h4>;
-                  },
-                }}
-              >
-                {body}
-              </ReactMarkdown>
-            </div>
-          </main>
-
-          {/* ASIDE DERECHO (BookMenu / TOC) */}
-          <aside className="lg:sticky lg:top-24 h-fit rounded-2xl border border-zinc-200 bg-white p-6">
-            <div className="text-xs uppercase tracking-wider text-zinc-500">
-              Navegación
-            </div>
-
-            <div className="mt-4 space-y-2">
-              {tocItems.length === 0 ? (
-                <div className="text-sm text-zinc-400">—</div>
-              ) : (
-                tocItems.map((it) => (
-                  <a
-                    key={it.id}
-                    href={`#${it.id}`}
-                    className={[
-                      "block rounded-xl px-3 py-2 text-sm border border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50 transition-colors",
-                      it.level === "4" ? "ml-4 text-zinc-600" : "",
-                    ].join(" ")}
-                  >
-                    {it.text}
-                  </a>
-                ))
-              )}
-            </div>
-          </aside>
+    <>
+      <article className="min-w-0">
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold tracking-tight text-zinc-900">
+            {finalTitle}
+          </h1>
         </div>
-      </div>
-    </section>
+
+        <div className="prose prose-zinc max-w-none text-justify">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkSlug]}
+            components={{
+              // si aparece un H1 dentro del body, lo bajamos a H2
+              h1: ({ children }) => (
+                <h2 className="text-2xl font-semibold tracking-tight">
+                  {children}
+                </h2>
+              ),
+            }}>
+            {body}
+          </ReactMarkdown>
+        </div>
+      </article>
+
+      <BackToTopButton showAfter={700} />
+    </>
   );
 }

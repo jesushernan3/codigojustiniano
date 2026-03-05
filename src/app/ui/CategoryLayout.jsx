@@ -30,7 +30,7 @@ export default function CategoryLayout() {
       <div className="mx-auto max-w-7xl px-4 md:px-6 py-8">
         <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-8">
           {/* ASIDE: estilo docs */}
-          <aside className="lg:sticky lg:top-24 h-fit">
+          <aside className="lg:top-24 h-fit">
             <div className="rounded-xl border border-zinc-200 bg-white p-5">
               <div className="text-xs font-medium uppercase tracking-wider text-zinc-500">
                 {currentBook ? "Libro" : "Categoría"}
@@ -68,7 +68,7 @@ export default function CategoryLayout() {
           {/* CONTENIDO */}
           <main className="min-w-0">
             <div className="rounded-xl border border-zinc-200 bg-white px-6 py-7 md:px-10 md:py-10">
-              <div className="mx-auto max-w-3xl">
+              <div className="mx-auto max-w-4xl">
                 <Outlet context={{ category, lang, currentBook }} />
               </div>
             </div>

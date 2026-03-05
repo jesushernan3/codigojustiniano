@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="text-xs font-medium uppercase tracking-wider text-zinc-500">
               Secciones
             </div>
-            <nav className="mt-4 space-y-2 text-sm">
+            <nav className="mt-4 space-y-2 text-sm gap-2 flex flex-col">
               <FooterLink to="/codex">Codex</FooterLink>
               <FooterLink to="/digesto">Digesto</FooterLink>
               <FooterLink to="/instituciones">Instituciones</FooterLink>
@@ -34,13 +34,12 @@ export default function Footer() {
             <div className="text-xs font-medium uppercase tracking-wider text-zinc-500">
               Recursos
             </div>
-            <nav className="mt-4 space-y-2 text-sm">
+            <nav className="flex flex-col mt-4 space-y-2 text-sm">
               <a
                 className="text-zinc-600 hover:text-zinc-900"
                 href="https://droitromain.univ-grenoble-alpes.fr/corpjurciv.htm"
                 target="_blank"
-                rel="noreferrer"
-              >
+                rel="noreferrer">
                 Fuente / Referencia
               </a>
               <FooterLink to="/acerca">Acerca</FooterLink>

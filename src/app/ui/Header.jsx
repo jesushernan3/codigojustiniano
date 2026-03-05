@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink, Link } from "react-router";
 
 function NavItem({ to, children }) {
   return (
@@ -24,10 +24,14 @@ export default function Header() {
       {/* Bloque superior (normal) */}
       <header className="bg-white border-b border-zinc-200">
         <div className="mx-auto max-w-7xl px-4 md:px-6 py-8">
-          <h1 className="text-4xl font-semibold tracking-tight text-zinc-900">
-            Corpus Iuris Civilis
-          </h1>
-          <p className="mt-1 text-sm text-zinc-500">Cuerpo de derecho civil</p>
+          <Link to={"/"}>
+            <h1 className="text-4xl font-semibold tracking-tight text-zinc-900">
+              CORPUS IURIS CIVILIS{" "}
+            </h1>
+            <p className="mt-1 text-sm text-zinc-500">
+              Cuerpo de derecho civil
+            </p>
+          </Link>
         </div>
       </header>
 
