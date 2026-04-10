@@ -1,7 +1,7 @@
 export default function Home() {
   return (
-    <div className="bg-white max-w-2xl sm:w-auto sm:mx-2 mx-auto my-10 pb-10 rounded-2xl">
-      <p className="text-zinc-800 text-justify p-5 mx-auto sm:mx-2">
+    <div className=" flex justify-center m-5">
+      <p className="block text-zinc-800 bg-white rounded-2xl max-w-2xl text-justify p-5 ">
         El Corpus Iuris Civilis se publicó en tres partes, en latín, bajo la
         dirección del cuestor imperial Triboniano a petición del emperador
         Justiniano en 529-534. La primera parte fue el Codex Justinianus, que

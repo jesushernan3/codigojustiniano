@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-body {
-  background-color: #e8e8e8;
-}
-
 html { scroll-behavior: smooth}
 
 h2, h3, h4 { scroll-margin-top: 96px; }
