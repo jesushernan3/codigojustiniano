@@ -1,5 +1,5 @@
 @import "tailwindcss";
 
-html { scroll-behavior: smooth}
+html { scroll-behavior: smooth;}
 
 h2, h3, h4 { scroll-margin-top: 96px; }
