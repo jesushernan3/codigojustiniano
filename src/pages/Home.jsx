@@ -29,12 +29,12 @@ export default function Home() {
 
   return (
     <main className="mx-auto max-w-5xl px-4 py-12">
-      <section className="mb-10">
+      <section className="mb-10 max-w-xl mx-auto p-5 bg-white rounded-md">
         <h1 className="text-4xl font-semibold tracking-tight">
           {text(homeText.title, safeLang)}
         </h1>
 
-        <p className="mt-4 max-w-2xl text-lg text-zinc-600">
+        <p className="mt-4 max-w-2xl text-lg text-zinc-600 text-justify">
           {text(homeText.description, safeLang)}
         </p>
       </section>

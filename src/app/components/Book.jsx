@@ -32,7 +32,11 @@ export default function Book() {
   const content = getBookContent(categorySlug, book.file);
 
   if (!content) {
-    return <p>No se encontró el contenido del libro.</p>;
+    return (
+      <p className="block text-center">
+        No se encontró el contenido del libro.
+      </p>
+    );
   }
 
   return (

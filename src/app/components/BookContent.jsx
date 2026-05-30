@@ -30,7 +30,9 @@ export default function BookContent({ content, lang = "es" }) {
   const tocItems = getTocItems(content.toc, lang);
 
   return (
-    <article className="prose prose-zinc max-w-none overflow-y-auto scroll-smooth">
+    <article
+      id="main-content"
+      className="prose prose-zinc max-w-none overflow-y-auto scroll-smooth">
       <header className="mb-10 border-b border-zinc-200 pb-6">
         <p className="mb-2 text-sm font-medium uppercase tracking-wide text-zinc-500">
           {content.category}
@@ -73,7 +75,9 @@ export default function BookContent({ content, lang = "es" }) {
                 <h3 className="py-2 font-semibold">{article.title}</h3>
 
                 {article.paragraphs.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
+                  <p className="mb-3 text-justify" key={index}>
+                    {paragraph}
+                  </p>
                 ))}
               </article>
             ))}

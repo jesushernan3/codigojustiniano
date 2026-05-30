@@ -58,11 +58,13 @@ export default function Category() {
           {getText(category.label, safeLang)}
         </h1> */}
 
-        <article>
+        <article id="main-content" className="text-justify">
           {CategoryContent ? (
             <CategoryContent category={category} lang={safeLang} />
           ) : (
-            <p>No hay contenido cargado para esta categoría.</p>
+            <p className="block text-center">
+              No hay contenido cargado para esta categoría.
+            </p>
           )}
         </article>
       </main>
