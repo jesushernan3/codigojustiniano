@@ -64,7 +64,10 @@ export default function BookContent({ content, lang = "es" }) {
         const articles = getArticles(section.articles, lang);
 
         return (
-          <section key={section.id} id={section.id} className="scroll-mt-24">
+          <section
+            key={section.id}
+            id={section.id}
+            className="scroll-mt-24 border-t border-gray-400">
             <h2 className="py-2 font-bold">{sectionTitle}</h2>
 
             {articles.map((article) => (

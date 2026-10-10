@@ -8,7 +8,7 @@ export default function RootLayout() {
     <>
       <Header />
       <ScrollToMainContent />
-      <main className="min-h-screen bg-gray-50 py-10">
+      <main className="min-h-screen bg-gray-100 py-10">
         <Outlet />
       </main>
       <Footer />

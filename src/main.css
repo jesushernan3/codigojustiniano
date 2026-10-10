@@ -3,3 +3,13 @@
 html { scroll-behavior: smooth;}
 
 h2, h3, h4 { scroll-margin-top: 96px; }
+
+#main-content {
+  scroll-margin-top: 88px;
+}
+
+@media (min-width: 768px) {
+  #main-content {
+    scroll-margin-top: 96px;
+  }
+}
